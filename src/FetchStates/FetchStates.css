@@ -1,0 +1,46 @@
+.Fetch{
+    display: inline-block;
+    padding: 16px;
+    border: 1px solid black;
+    box-shadow: 2px 2px gray;
+    width: 50%;
+}
+.Card{
+    text-align: center;
+    display: inline-block;
+    padding: 16px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px #eee;
+}
+#confirmed{
+    color: red;
+}
+#active{
+    color: blue;
+}
+#recovered{
+    color: green;
+}
+#deceased{
+    color: rgb(87, 84, 84);
+}
+#confirmed:hover{
+    color: white;
+    background-color: tomato;
+    box-shadow: 8px 8px rgb(207, 203, 203);
+}
+#active:hover{
+    color:white;
+    background-color: cornflowerblue;
+    box-shadow: 8px 8px rgb(207, 203, 203);
+}
+#recovered:hover{
+    color: white;
+    background-color: rgb(76, 190, 76);
+    box-shadow: 8px 8px rgb(207, 203, 203);
+}
+#deceased:hover{
+    background-color: grey;
+    color: white;
+}
