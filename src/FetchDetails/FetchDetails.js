@@ -70,9 +70,9 @@ export default class FetchDetails extends Component {
                     </Grid>
                     <Grid item component = {Card} xs = {12} md = {3} className = "Card" id ="deceased">
                         <CardContent>
-                            <Typography>Deceased</Typography>
+                            <Typography>Deaths</Typography>
                             <Typography variant ='h5'>
-                                <CountUp start = {0} end = {parseInt(this.state.recovered,10)} duration = {2} separator = ',' /> 
+                                <CountUp start = {0} end = {parseInt(this.state.deceased,10)} duration = {2} separator = ',' /> 
                                 ({this.state.delta['deceased'] < 0 ? this.state.delta['deceased'] : '+'+this.state.delta['deceased']})
                             </Typography>
                         </CardContent>
