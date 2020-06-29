@@ -156,7 +156,7 @@ class App extends Component {
                 </tbody>
               </table>
               <SocialIcon url = "http://www.linkedin.com/in/pradyumna-prog" style = {{margin : '5px'}}/>
-              <SocialIcon url = "http://pradyumnatripathi99@gmail.com" style = {{margin : '5px'}}/>
+              <SocialIcon url = "mailto:pradyumnatripathi99@gmail.com" style = {{margin : '5px'}}/>
             </CardContent>
           </Grid>
         </Grid>
