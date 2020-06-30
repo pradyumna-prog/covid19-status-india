@@ -119,12 +119,12 @@ class App extends Component {
         <br/><br/>
         </div>
     }
-    let component = null;
+    let statesComponent = null;
     if(this.state.showDistrict){
-      component = this.state.fetchdetails;
+      statesComponent = this.state.fetchdetails;
     }
     else{
-      component = <FetchStates dataRender = {this.state.dataRender} stateName = {this.state.inputState}/>
+      statesComponent = <FetchStates dataRender = {this.state.dataRender} stateName = {this.state.inputState}/>
     }
 
     return (
@@ -138,7 +138,7 @@ class App extends Component {
         <br/><br/>
         {selectList}
         <div className = "Container">
-          {component}
+          {statesComponent}
           <Charts 
             labels = {this.state.labels} 
             valuesConfirm = {this.state.valuesConfirm} valuesRecover = {this.state.valuesRecover}/>    
