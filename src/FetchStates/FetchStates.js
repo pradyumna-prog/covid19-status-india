@@ -36,7 +36,28 @@ export default class FetchStates extends Component {
             deltaRecovered: data['deltarecovered']
         });   
     }
-
+/*
+    static getDerivedStateFromProps(props, state){
+        let data = '0'
+        props.dataRender.forEach(row => {
+            if(row['state'] === props.stateName){
+                data = row
+            } 
+        });
+        state = {
+            loading: false,
+            index: data,
+            confirmed: data['confirmed'],
+            active: data['active'],
+            recovered: data['recovered'],
+            deceased: data['deaths'],
+            deltaConfirmed: data['deltaconfirmed'],
+            deltaDeaths: data['deltadeaths'],
+            deltaRecovered: data['deltarecovered']
+        };
+        return state;
+    }
+*/
     componentWillReceiveProps() { this.componentDidMount() }
 
     render() {

@@ -4,9 +4,8 @@ import FetchDetails from './FetchDetails/FetchDetails';
 import FetchStates from './FetchStates/FetchStates';
 import Charts from './ChartComponent/ChartComponnet';
 import titleimage from './title.png';
-import myimage from './myphoto.jpg';
-import {Grid, Card, CardContent} from '@material-ui/core';
-import {SocialIcon} from 'react-social-icons';
+import DesignerInformation from './DesignerInformation/DesignerInformation';
+
 class App extends Component {
 
   state = {
@@ -144,22 +143,7 @@ class App extends Component {
             labels = {this.state.labels} 
             valuesConfirm = {this.state.valuesConfirm} valuesRecover = {this.state.valuesRecover}/>    
         </div>
-        <Grid container>
-          <Grid item component = {Card} xs = {12} md = {3} className = "footer">
-            <CardContent>
-              <table>
-                <tbody>
-                <tr>
-                  <td><img src = {myimage} alt = "Pradyumna" id = 'myimage'/></td>
-                  <td id = "myname">&emsp;&emsp;Developed by: Pradyumna Tripathi</td>
-                </tr>
-                </tbody>
-              </table>
-              <SocialIcon url = "http://www.linkedin.com/in/pradyumna-prog" style = {{margin : '5px'}}/>
-              <SocialIcon url = "mailto:pradyumnatripathi99@gmail.com" style = {{margin : '5px'}}/>
-            </CardContent>
-          </Grid>
-        </Grid>
+        <DesignerInformation />
       </div>
       );
   }

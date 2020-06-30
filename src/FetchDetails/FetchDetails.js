@@ -18,7 +18,7 @@ export default class FetchDetails extends Component {
         const url = 'https://api.covid19india.org/state_district_wise.json';
         const response = await fetch(url);
         const data = await response.json();
-        const dataRender = await data[this.props.stateName]['districtData']
+        const dataRender = await data[this.props.stateName]['districtData'];
         
         this.setState({
             loading: false,
@@ -29,7 +29,25 @@ export default class FetchDetails extends Component {
             delta: dataRender[this.props.districtName]['delta']
         })  
     }
+/*
+    static async getDerivedStateFromProps(props, state) {
+        const url = 'https://api.covid19india.org/state_district_wise.json';
+        const response = await fetch(url);
+        const data = await response.json();
+        const dataRender = await data[props.stateName]['districtData'];
+        
+        state = {
+            loading: false,
+            confirmed: dataRender[props.districtName]['confirmed'],
+            active: dataRender[props.districtName]['active'],
+            recovered: (parseInt(dataRender[props.districtName]['confirmed'], 10) - parseInt(dataRender[props.districtName]['active'], 10)).toString(),
+            deceased: dataRender[props.districtName]['deceased'],
+            delta: dataRender[props.districtName]['delta']
+        };
 
+        return state;
+    }
+*/
     componentWillReceiveProps() { this.componentDidMount() }
 
     render() {
