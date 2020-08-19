@@ -5,8 +5,8 @@ import {SocialIcon} from 'react-social-icons';
 
 const designerInfo = (props) =>{
     return(
-        <Grid container>
-          <Grid item component = {Card} xs = {12} md = {3} className = "footer">
+        <Grid container className = "footer">
+          <Grid item component = {Card} xs = {12} md = {3} className="content">
             <CardContent>
               <table>
                 <tbody>
@@ -17,6 +17,7 @@ const designerInfo = (props) =>{
                 </tbody>
               </table>
               <SocialIcon url = "http://www.linkedin.com/in/pradyumna-prog" style = {{margin : '5px'}}/>
+              <SocialIcon url = "https://github.com/pradyumna-prog" style = {{margin : '5px'}}/>
               <SocialIcon url = "mailto:pradyumnatripathi99@gmail.com" style = {{margin : '5px'}}/>
             </CardContent>
           </Grid>

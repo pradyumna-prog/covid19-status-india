@@ -1,19 +1,47 @@
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  padding: 16px;
-  margin: 10px;
+  background-color: rgb(250, 252, 254);
 }
-.image{
+.titleImage{
   width: 70%;
-  height: 10%;
+  height: 180px;
+}
+.App .select{
+  display: inline-block;
+  width: 70%;
+}
+.App .select select{
+  width: 70%;
+  font-size: 18px;
+}
+.App .select button{
+  border-radius: 5px;
+  display: inline-block;
+  max-width: 140px;
+  font-size: 14px;
+}
+.App .select button:hover{
+  background-color: #111;
+  color: #fff;
 }
 .footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .content{
   border: 1px solid #eee;
-  box-shadow: 3px 3px #ccc;
+  box-shadow: 3px 3px 8px #ccc,
+    -3px -3px 8px #ccc;;
+  
 }
 #myimage{
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 10%;
 }
 #myname{
@@ -25,13 +53,15 @@
   justify-content: center;
   flex-direction: column;
 }
-.CardsContainer{
-  margin: 50px 0;
+.App .CardsContainer{
+  width: 880px;
+  padding: 50px 0;
 }
 .Charts{
   display: flex;
   justify-content: center;
   width: 85%;
+  padding: 0 20px;
 }
 .Card{
   margin: 0 2% !important;
@@ -57,39 +87,95 @@
 #confirmed:hover{
   color: white;
   background-color: tomato;
-  box-shadow: 8px 8px rgb(207, 203, 203);
+  box-shadow: -8px -8px 6px rgb(207, 203, 203),
+    8px 8px 6px rgb(207, 203, 203);;
 }
 #active:hover{
   color:white;
   background-color: cornflowerblue;
-  box-shadow: 8px 8px rgb(207, 203, 203);
+  box-shadow: -8px -8px 6px rgb(207, 203, 203),
+    8px 8px 6px rgb(207, 203, 203);;
 }
 #recovered:hover{
   color: white;
   background-color: rgb(76, 190, 76);
-  box-shadow: 8px 8px rgb(207, 203, 203);
+  box-shadow: -8px -8px 6px rgb(207, 203, 203),
+    8px 8px 6px rgb(207, 203, 203);;
 }
 #deceased:hover{
   background-color: grey;
   color: white;
-  box-shadow: 8px 8px rgb(207, 203, 203);
+  box-shadow: -8px -8px 6px rgb(207, 203, 203),
+    8px 8px 6px rgb(207, 203, 203);;
 }
-.footer:hover{
-  box-shadow: 8px 8px rgb(207, 203, 203);
+.content:hover{
+  box-shadow: -8px -8px 8px rgb(207, 203, 203),
+    8px 8px 8px rgb(207, 203, 203);;
 }
 
 @media (max-width: 770px){
   .Container{
     margin: 0 10%;
   }
-  .image{
-    width: 100%;
+  .titleImage{
+    width: 80%;
+    height: 150px;
   }
   .Card{
     margin: 2% 0 !important;
   }
-  .Charts{
-    width: 100%;
-    height: fit-content;
+  .App .CardsContainer{
+    width: 690px;
   }
 }
+@media (max-width: 560px){
+  .Container{
+    margin: 0 10%;
+  }
+  .titleImage{
+    margin-top: -10px;
+    width: 100%;
+    height: 100px;
+  }
+  .Card{
+    margin: 2% 0 !important;
+    max-width: 60%;
+  }
+  .App .CardsContainer{
+    width: 490px;
+  }
+  .Charts{
+    display: none;
+  }
+}
+.App .loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+.loading:after {
+  content: 'LOADING...';
+  animation: dots 2s steps(5, end) infinite;}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  40% {
+    color: white;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  60% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 rgba(0,0,0,0);}
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 white;}}

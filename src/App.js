@@ -92,7 +92,10 @@ class App extends Component {
 
   render() {
     if(this.state.loading){
-      return <div className = "App"><h3>loading...</h3></div>
+      return (
+      <div className = "App">
+        <h3 className="loading"></h3>
+      </div>)
     }
     let stateoptions = this.state.stateNames.map( (name, index) =>{
       return (
@@ -110,7 +113,7 @@ class App extends Component {
             {name} </option>
           );
       });
-      selectList = <div>
+      selectList = <div className="select">
         <select onChange = {this.districtInputHandler}>
           <option>Select a district</option> 
           {districtoptions} 
@@ -129,16 +132,18 @@ class App extends Component {
 
     return (
       <div className="App">
-        <img src = {titleimage} alt = 'Covid 19 India' className = "image"/><br/>
-        <select onChange = {this.stateInputHandler}> 
-          <option>Total</option>
-          {stateoptions} 
-        </select> &nbsp;
-        <button onClick = {this.checkStatesHandler}> Check State Cases </button>
-        <br/><br/>
+        <img src = {titleimage} alt = 'Covid 19 India' className = "titleImage"/><br/>
+        <div className="select">
+          <select onChange = {this.stateInputHandler}> 
+            <option>Total</option>
+            {stateoptions} 
+          </select> &nbsp;
+          <button onClick = {this.checkStatesHandler}> Check State Cases </button>
+        </div>
+        <br/>
         {selectList}
         <div className = "Container">
-          {statesComponent}
+          <div className="CardsInside">{statesComponent}</div>
           <Charts 
             labels = {this.state.labels} 
             valuesConfirm = {this.state.valuesConfirm} valuesRecover = {this.state.valuesRecover}/>    

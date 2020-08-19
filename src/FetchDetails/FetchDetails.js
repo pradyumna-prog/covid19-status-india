@@ -58,39 +58,47 @@ export default class FetchDetails extends Component {
         else{
             data = 
             <div className = "CardsContainer">
-                <h1>{this.props.districtName}</h1> 
-                <Grid container spacing = {3} justify = "center">
-                    <Grid item component = {Card} xs = {12} md = {3} className = "Card" id = "confirmed">
+                <Grid 
+                container 
+                spacing = {3}
+                direction="row"
+                justify="center"
+                alignItems="center">
+                    <Grid item component = {Card} xs = {9} md = {2} className = "Card" id = "confirmed">
                         <CardContent>
                             <Typography>Confirmed</Typography>
                             <Typography variant = 'h5'>
                                 <CountUp start = {0} end = {parseInt(this.state.confirmed,10)} duration = {2} separator = ',' />
+                                <br/>
                                 ({this.state.delta['confirmed'] < 0 ? this.state.delta['confirmed'] : '+'+this.state.delta['confirmed']})
                             </Typography>
                         </CardContent>
                     </Grid>
-                    <Grid item component = {Card} xs = {12} md = {3} className = "Card" id = "active">
+                    <Grid item component = {Card} xs = {9} md = {2} className = "Card" id = "active">
                         <CardContent>
                             <Typography>Active</Typography>
                             <Typography variant = 'h5'>
                                 <CountUp start = {0} end = {parseInt(this.state.active,10)} duration = {2} separator = ',' />
+                                <br/>&emsp;
                             </Typography>
                         </CardContent>
                     </Grid>
-                    <Grid item component = {Card} xs = {12} md = {3} className = "Card" id ="recovered">
+                    <Grid item component = {Card} xs = {9} md = {2} className = "Card" id ="recovered">
                         <CardContent>
                             <Typography>Recovered</Typography>
                             <Typography variant ='h5'>
                                 <CountUp start = {0} end = {parseInt(this.state.recovered,10)} duration = {2} separator = ',' /> 
+                                <br/>
                                 ({this.state.delta['recovered'] < 0 ? this.state.delta['recovered'] : '+'+this.state.delta['recovered']})
                             </Typography>
                         </CardContent>
                     </Grid>
-                    <Grid item component = {Card} xs = {12} md = {3} className = "Card" id ="deceased">
+                    <Grid item component = {Card} xs = {9} md = {2} className = "Card" id ="deceased">
                         <CardContent>
                             <Typography>Deaths</Typography>
                             <Typography variant ='h5'>
                                 <CountUp start = {0} end = {parseInt(this.state.deceased,10)} duration = {2} separator = ',' /> 
+                                <br/>
                                 ({this.state.delta['deceased'] < 0 ? this.state.delta['deceased'] : '+'+this.state.delta['deceased']})
                             </Typography>
                         </CardContent>
